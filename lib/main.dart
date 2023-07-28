@@ -6,10 +6,11 @@ import 'package:provider/provider.dart';
 import './pages/page1.dart';
 import './pages/page2.dart';
 import './pages/page3.dart';
-import './pages/details.dart';
+// import './pages/details.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:dio/dio.dart';
 import './pages/login.dart';
+import 'routers/index.dart';
 
 /**
 Provider的使用
@@ -66,34 +67,30 @@ class MyApp extends StatelessWidget {
     }
 
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      // 使用Builder组件来创建一个新的context
-      // home: Builder(
-      //   builder: (context) =>MyHomePage(title: 'Flutter Demo Home Page', context: context)
-      // ),
-      // 使用FutureBuilder组件来根据本地存储的用户信息显示不同的页面
-      home: FutureBuilder<String?>(
-        future: getToken(),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            // 如果有token，说明已经登录，显示主页
-            return MyHomePage(
-                title: 'Flutter Demo Home Page', context: context);
-          } else {
-            // 如果没有token，说明没有登录，显示登录页面
-            return LoginPage();
-          }
-        },
-      ),
-
-      // 提供一个routes属性，定义不同的路由名称和对应的页面组件
-      routes: {
-        '/detail': (context) => DetailPage(),
-      },
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        // 使用Builder组件来创建一个新的context
+        // home: Builder(
+        //   builder: (context) =>MyHomePage(title: 'Flutter Demo Home Page', context: context)
+        // ),
+        // 使用FutureBuilder组件来根据本地存储的用户信息显示不同的页面
+        home: FutureBuilder<String?>(
+          future: getToken(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              // 如果有token，说明已经登录，显示主页
+              return MyHomePage(
+                  title: 'Flutter Demo Home Page', context: context);
+            } else {
+              // 如果没有token，说明没有登录，显示登录页面
+              return LoginPage();
+            }
+          },
+        ),
+        // 提供一个routes属性，定义不同的路由名称和对应的页面组件
+        routes: getRouters(context));
   }
 }
 
