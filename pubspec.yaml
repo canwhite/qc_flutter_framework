@@ -38,6 +38,7 @@ dependencies:
   provider: ^6.0.5
   dio: any
   shared_preferences: ^2.2.0
+  flutter_webview_plugin: any 
 
 dev_dependencies:
   flutter_test:
