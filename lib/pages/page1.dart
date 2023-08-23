@@ -39,7 +39,7 @@ class _Page1State extends State<Page1> {
                       Navigator.pushNamed(
                         widget.context,
                         '/detail',
-                        arguments: 'https://www.meijutt.cc/',
+                        arguments: 'https://m.douban.com/movie/',
                       ).then((value) => {
                             // 返回详情页之后，显示bottomNavigationBar
                             // 使用Provider.of来获取BottomNavigationBarModel类的实例，并调用它的方法来修改_showBottomNavigationBar的值
