@@ -41,4 +41,5 @@ bool isIOS = Platform.isIOS;
 
 ## PS
 [dart](https://github.com/canwhite/qc_flutter_dart)    
-[styles](https://github.com/canwhite/qc_flutter_styles)
+[styles](https://github.com/canwhite/qc_flutter_styles)    
+[go_router](https://github.com/canwhite/qc_flutter_firebase)
