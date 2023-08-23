@@ -32,3 +32,13 @@ iOS IPA：在项目目录的 build/ios/iphoneos 目录中。
 
 ```
 
+## platform
+```
+bool isAndroid = Platform.isAndroid; 
+bool isIOS = Platform.isIOS;
+
+```
+
+## PS
+[dart](https://github.com/canwhite/qc_flutter_dart)
+[styles](https://github.com/canwhite/qc_flutter_styles)
